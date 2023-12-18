@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Giriş</title>
+
+</head>
+<body>
+<h1 th:text="#{login.title}">Kullanıcı Giriş</h1>
+<form action="/login" method="post">
+    <label for="username" th:text="#{login.username.label}">Kullanıcı Adı:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password" th:text="#{login.password.label}">Şifre:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit" th:text="#{login.submit}">Giriş Yap</button>
+
+</form>
+</body>
+</html>

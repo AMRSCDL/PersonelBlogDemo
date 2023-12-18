@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Makale Yönetimi</title>
+
+</head>
+<body>
+<h1>Makale Yönetimi</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Başlık</th>
+    <th>İçerik</th>
+    <!-- Diğer kolonlar -->
+    <th>İşlemler</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Makale listesini döngü içinde göster -->
+  <tr th:each="article : ${articles}">
+    <td th:text="${article.id}"></td>
+    <td th:text="${article.title}"></td>
+    <td th:text="${article.content}"></td>
+    <!-- Diğer kolonlar -->
+    <td>
+      <a th:href="@{/admin/articles/edit/{id}(id=${article.id})}">Düzenle</a>
+      <a th:href="@{/admin/articles/delete/{id}(id=${article.id})}">Sil</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a th:href="@{/admin/articles/create}">Yeni Makale Ekle</a>
+</body>
+</html>

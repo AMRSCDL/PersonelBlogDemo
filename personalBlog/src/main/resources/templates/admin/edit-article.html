@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makale Düzenle</title>
+
+</head>
+<body>
+<h1>Makale Düzenle</h1>
+<form action="/admin/articles/edit/{id}" method="post">
+
+    <label for="title">Başlık:</label>
+    <input type="text" id="title" name="title" th:value="${article.title}" required>
+    <br>
+    <label for="content">İçerik:</label>
+    <textarea id="content" name="content" required th:text="${article.content}"></textarea>
+    <br>
+
+    <button type="submit">Kaydet</button>
+</form>
+</body>
+</html>
